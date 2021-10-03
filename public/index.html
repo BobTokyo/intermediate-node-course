@@ -1,0 +1,49 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="public.css">
+</head>
+<body>
+<div>
+<h2>Marketplace</h2>
+<label for="input">Enter ID to GET:</label>
+<input type="text" id="input">
+<button id="addItem">Get Info</button>
+<ul>
+
+</ul>
+
+<image id="image1"></image>
+
+</div>
+
+<script>
+    let addItem = document.querySelector('#addItem');
+    let ul = document.querySelector('ul');
+    
+    addItem.addEventListener('click', function(){
+        let li = document.createElement('li');
+        let input = document.createElement('span');
+        let inputValue = document.querySelector('#input').value;
+        input.textContent = inputValue;
+        let deleteButton = document.createElement('button');
+        deleteButton.textContent = "delete";
+        li.appendChild(input);
+        li.appendChild(deleteButton);
+        ul.appendChild(li);
+        let clear = document.querySelector('#input');
+        clear.value = "";
+        deleteButton.onclick = function(e) {
+          ul.removeChild(li);
+        }
+
+        clear.focus();
+
+    });
+
+    
+
+</script>
+</body>
+</html>
